@@ -57,9 +57,6 @@
           
 
           
-            
-            <img src="_static/SimCenter_TFT_logo.png" class="logo" alt="Logo"/>
-          
           </a>
 
           
@@ -203,38 +200,47 @@ superposition, this analysis is limited to the analysis of linear system.</p>
 </div>
 <div class="section" id="evaluation-of-transfer-function">
 <h2>Evaluation of Transfer function<a class="headerlink" href="#evaluation-of-transfer-function" title="Permalink to this headline">¶</a></h2>
+<p>Within the profile, both upward and downward travelling waves exist due to reflection at each layer boundary (refraction
+is ignored in 1D assumption). When the bedrock is rigid, any downward travelling waves in the soil will be completely reflected back toward the
+ground surface. Thus all elastic wave energy is trapped in the system. Elastic bedrock, on the other hand, will only reflects part of the
+downward travelling waves that reaches the soil-rock interface; part of elastic wave energy is transmitted through the interface and lost from
+the system. This is a form of radiation damping and it causes the free surface motion amplitudes to be smaller than those for the case of
+rigid bedrock. The fraction of reflected waves depends on the <em>complex impedance ratio</em>, <span class="math notranslate nohighlight">\(\alpha_z\)</span>, that is defined as,</p>
+<div class="math notranslate nohighlight">
+\[\frac{G^*_mk^*_m}{G^*_{m+1}k^*_{m+1}} = \frac{\rho_m(v_s^*)_m}{\rho_{m+1}(v_s^*)_{m+1}} \,,\]</div>
+<p>where <span class="math notranslate nohighlight">\(G^*,\,k^*,\,v_s^*\)</span> are complex shear modulus, complex wave number, and complex shear wave velocity, respectively.</p>
+<div class="align-center figure" id="id3">
+<a class="reference internal image-reference" href="_images/schematic.png"><img alt="_images/schematic.png" src="_images/schematic.png" style="width: 382.6px; height: 288.2px;" /></a>
+<p class="caption"><span class="caption-text">Schematic for a layered soil deposit on rock</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
 <p><a class="bibtex reference internal" href="#kramer1996" id="id2">[Kra96]</a> presents details about evaluation of transfer functions for four different cases by varing the assumptions for soil and
 bedrock, respectively. These cases can be replicated using this tool:</p>
 <div class="section" id="unifom-undamped-soil-on-rigid-rock">
 <h3>Unifom, undamped soil on rigid rock<a class="headerlink" href="#unifom-undamped-soil-on-rigid-rock" title="Permalink to this headline">¶</a></h3>
-<div class="align-center figure" id="id3">
+<div class="align-center figure" id="id4">
 <a class="reference internal image-reference" href="_images/case1.png"><img alt="_images/case1.png" src="_images/case1.png" style="width: 315.20000000000005px; height: 238.20000000000002px;" /></a>
-<p class="caption"><span class="caption-text">Transfer function for an uniform, undamped soil on rigid rock</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Transfer function for an uniform, undamped soil on rigid rock</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="uniform-damped-soil-on-rigid-rock">
 <h3>Uniform, damped soil on rigid rock<a class="headerlink" href="#uniform-damped-soil-on-rigid-rock" title="Permalink to this headline">¶</a></h3>
-<div class="align-center figure" id="id4">
+<div class="align-center figure" id="id5">
 <a class="reference internal image-reference" href="_images/case2.png"><img alt="_images/case2.png" src="_images/case2.png" style="width: 315.20000000000005px; height: 238.20000000000002px;" /></a>
-<p class="caption"><span class="caption-text">Transfer function for an uniform, damped soil on rigid rock</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Transfer function for an uniform, damped soil on rigid rock</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="unifom-damped-soil-on-elastic-rock">
 <h3>Unifom, damped soil on elastic rock<a class="headerlink" href="#unifom-damped-soil-on-elastic-rock" title="Permalink to this headline">¶</a></h3>
-<div class="align-center figure" id="id5">
+<div class="align-center figure" id="id6">
 <a class="reference internal image-reference" href="_images/case3.png"><img alt="_images/case3.png" src="_images/case3.png" style="width: 315.20000000000005px; height: 238.20000000000002px;" /></a>
-<p class="caption"><span class="caption-text">Transfer function for an uniform, damped soil on elastic rock with impedance ratio = 0.5</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Transfer function for an uniform, damped soil on elastic rock with impedance ratio = 0.5</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="layered-damped-soil-on-elastic-rock">
 <h3>Layered, damped soil on elastic rock<a class="headerlink" href="#layered-damped-soil-on-elastic-rock" title="Permalink to this headline">¶</a></h3>
-<div class="align-center figure" id="id6">
-<a class="reference internal image-reference" href="_images/case4.png"><img alt="_images/case4.png" src="_images/case4.png" style="width: 315.20000000000005px; height: 238.20000000000002px;" /></a>
-<p class="caption"><span class="caption-text">Transfer function for layered, damped soil on elastic rock</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
-</div>
 <div class="align-center figure" id="id7">
-<a class="reference internal image-reference" href="_images/schematic.png"><img alt="_images/schematic.png" src="_images/schematic.png" style="width: 332.0px; height: 286.8px;" /></a>
-<p class="caption"><span class="caption-text">Schematic for a layered soil deposit on elastic rock</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="_images/case4.png"><img alt="_images/case4.png" src="_images/case4.png" style="width: 315.20000000000005px; height: 238.20000000000002px;" /></a>
+<p class="caption"><span class="caption-text">Transfer function for layered, damped soil on elastic rock</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
