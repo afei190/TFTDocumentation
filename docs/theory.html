@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Theory and Examples &mdash; TransferFunctionTool 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How to Build" href="how_to_build.html" />
+    <link rel="prev" title="Quick start" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> TransferFunctionTool
+          
+
+          
+            
+            <img src="_static/SimCenter_TFT_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick start</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Theory and Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#one-dimensional-ground-response-analysis">One-dimensional ground response analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transfer-function">Transfer function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#evaluation-of-transfer-function">Evaluation of Transfer function</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#unifom-undamped-soil-on-rigid-rock">Unifom, undamped soil on rigid rock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uniform-damped-soil-on-rigid-rock">Uniform, damped soil on rigid rock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unifom-damped-soil-on-elastic-rock">Unifom, damped soil on elastic rock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#layered-damped-soil-on-elastic-rock">Layered, damped soil on elastic rock</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#rigid-bedrock-vs-elastic-bedrock">Rigid bedrock vs. elastic bedrock</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="how_to_build.html">How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">Copyright and license</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">TransferFunctionTool</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Theory and Examples</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/theory.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="theory-and-examples">
+<h1>Theory and Examples<a class="headerlink" href="#theory-and-examples" title="Permalink to this headline">¶</a></h1>
+<p>This page describes basic concepts of one-dimensional ground response analysis and the usage transfer function. For more details, the user is encounged to read <a class="bibtex reference internal" href="#kramer1996" id="id1">[Kra96]</a>.</p>
+<div class="section" id="one-dimensional-ground-response-analysis">
+<h2>One-dimensional ground response analysis<a class="headerlink" href="#one-dimensional-ground-response-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Evaluation of ground response is one of the most common tasks in geotechnical earthquake engineering. Ground response analyses are used to predict ground surface
+motions to develop design response spectra, to evaluate potential for liquefaction, and to determine the earthquake induced load to super structures. As seismic
+body waves travel through different geologic units, they are reflected and refracted when reaching boundaries. One-dimensional ground response analyses are based
+on the assumption that all boundaries are horizontal and that the response of a soil deposit is predominantly caused by SH-waves propagating vertically from the
+underlying bedrock.</p>
+</div>
+<div class="section" id="transfer-function">
+<h2>Transfer function<a class="headerlink" href="#transfer-function" title="Permalink to this headline">¶</a></h2>
+<p>An important method for ground response analysis is based on the use of transfer function, that determines how each frequency in the bedrock (input) motion is
+amplified, or deamplified, by soil deposit. Thus, the transfer function may be viewed as a filter that acts upon some input signal to produce an output signal.
+For one dimensional site response analysis, the transfer function can be used to calcualte various response parameters, such as acceleration, velocity,
+displacement, shear stress, and shear strain, under an input motion parameter such as bedrock acceleration. Because this method relies on the principle of
+superposition, this analysis is limited to the analysis of linear system.</p>
+<p>The basic steps are as following:</p>
+<ol class="arabic simple">
+<li><p>Obtain Fourier series for the applied motion using Fast Fourier Transform (FFT).</p></li>
+<li><p>Multiply the Fourier series by the appropriate value of the transfer function at each frequency.</p></li>
+<li><p>Express the output motion in time domain by obtaining inverse Fourier transform of the output motion using inverse FFT.</p></li>
+</ol>
+<p>The greatest amplification will occur approximately at the lowest natural frequency, also know as the <strong>fundamental frequency</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\omega_0 = \frac{\pi v_s}{2H}\]</div>
+<p>The period of vibration corresponding to the fundamental frequency is called the <strong>characteristic site period</strong>:</p>
+<div class="math notranslate nohighlight">
+\[T_s = \frac{2\pi}{\omega_0} = \frac{4H}{v_s}\]</div>
+</div>
+<div class="section" id="evaluation-of-transfer-function">
+<h2>Evaluation of Transfer function<a class="headerlink" href="#evaluation-of-transfer-function" title="Permalink to this headline">¶</a></h2>
+<p><a class="bibtex reference internal" href="#kramer1996" id="id2">[Kra96]</a> presents details about evaluation of transfer functions for four different cases by varing the assumptions for soil and
+bedrock, respectively. These cases can be replicated using this tool:</p>
+<div class="section" id="unifom-undamped-soil-on-rigid-rock">
+<h3>Unifom, undamped soil on rigid rock<a class="headerlink" href="#unifom-undamped-soil-on-rigid-rock" title="Permalink to this headline">¶</a></h3>
+<div class="align-center figure" id="id3">
+<a class="reference internal image-reference" href="_images/case1.png"><img alt="_images/case1.png" src="_images/case1.png" style="width: 315.20000000000005px; height: 238.20000000000002px;" /></a>
+<p class="caption"><span class="caption-text">Transfer function for an uniform, undamped soil on rigid rock</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="uniform-damped-soil-on-rigid-rock">
+<h3>Uniform, damped soil on rigid rock<a class="headerlink" href="#uniform-damped-soil-on-rigid-rock" title="Permalink to this headline">¶</a></h3>
+<div class="align-center figure" id="id4">
+<a class="reference internal image-reference" href="_images/case2.png"><img alt="_images/case2.png" src="_images/case2.png" style="width: 315.20000000000005px; height: 238.20000000000002px;" /></a>
+<p class="caption"><span class="caption-text">Transfer function for an uniform, damped soil on rigid rock</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="unifom-damped-soil-on-elastic-rock">
+<h3>Unifom, damped soil on elastic rock<a class="headerlink" href="#unifom-damped-soil-on-elastic-rock" title="Permalink to this headline">¶</a></h3>
+<div class="align-center figure" id="id5">
+<a class="reference internal image-reference" href="_images/case3.png"><img alt="_images/case3.png" src="_images/case3.png" style="width: 315.20000000000005px; height: 238.20000000000002px;" /></a>
+<p class="caption"><span class="caption-text">Transfer function for an uniform, damped soil on elastic rock with impedance ratio = 0.5</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="layered-damped-soil-on-elastic-rock">
+<h3>Layered, damped soil on elastic rock<a class="headerlink" href="#layered-damped-soil-on-elastic-rock" title="Permalink to this headline">¶</a></h3>
+<div class="align-center figure" id="id6">
+<a class="reference internal image-reference" href="_images/case4.png"><img alt="_images/case4.png" src="_images/case4.png" style="width: 315.20000000000005px; height: 238.20000000000002px;" /></a>
+<p class="caption"><span class="caption-text">Transfer function for layered, damped soil on elastic rock</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id7">
+<a class="reference internal image-reference" href="_images/schematic.png"><img alt="_images/schematic.png" src="_images/schematic.png" style="width: 332.0px; height: 286.8px;" /></a>
+<p class="caption"><span class="caption-text">Schematic for a layered soil deposit on elastic rock</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="rigid-bedrock-vs-elastic-bedrock">
+<h2>Rigid bedrock vs. elastic bedrock<a class="headerlink" href="#rigid-bedrock-vs-elastic-bedrock" title="Permalink to this headline">¶</a></h2>
+<p>Bedrock can be modeled as rigid or elastic half space and it depends on the input motion. Rigid bedrock is used to apply within motion, that is recorded
+in an downhole. While elastic bedrock is used to apply rock outcrop motion, that is recorded at rock outcrop. In this tool, rigid bedrock is mimicked by
+increasing stiffness (shear wave velocity and/or density) of the bedrock.</p>
+<p id="bibtex-bibliography-theory-0"><dl class="citation">
+<dt class="bibtex label" id="kramer1996"><span class="brackets">Kra96</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p>S. L. Kramer. <em>Geotechnical Earthquake Engineering</em>. Pearson, 1996. ISBN 9783642196294.</p>
+</dd>
+</dl>
+</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="how_to_build.html" class="btn btn-neutral float-right" title="How to Build" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Quick start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, NHERI SimCenter
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
