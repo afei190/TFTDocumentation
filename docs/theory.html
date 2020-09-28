@@ -57,9 +57,6 @@
           
 
           
-            
-            <img src="_static/SimCenter_TFT_logo.png" class="logo" alt="Logo"/>
-          
           </a>
 
           
@@ -172,77 +169,86 @@
             
   <div class="section" id="theory-and-examples">
 <h1>Theory and Examples<a class="headerlink" href="#theory-and-examples" title="Permalink to this headline">¶</a></h1>
-<p>This page describes basic concepts of one-dimensional ground response analysis and the usage transfer function. For more details, the user is encounged to read <a class="bibtex reference internal" href="#kramer1996" id="id1">[Kra96]</a>.</p>
+<p>This page describes basic concepts of one-dimensional ground response analysis and the usage of transfer functions. For more details, the user is encounged to read <a class="bibtex reference internal" href="#kramer1996" id="id1">[Kra96]</a>.</p>
 <div class="section" id="one-dimensional-ground-response-analysis">
 <h2>One-dimensional ground response analysis<a class="headerlink" href="#one-dimensional-ground-response-analysis" title="Permalink to this headline">¶</a></h2>
 <p>Evaluation of ground response is one of the most common tasks in geotechnical earthquake engineering. Ground response analyses are used to predict ground surface
-motions to develop design response spectra, to evaluate potential for liquefaction, and to determine the earthquake induced load to super structures. As seismic
+motions, to develop design response spectra, to evaluate potential for liquefaction, and to determine earthquake induced loads to super structures. As seismic
 body waves travel through different geologic units, they are reflected and refracted when reaching boundaries. One-dimensional ground response analyses are based
 on the assumption that all boundaries are horizontal and that the response of a soil deposit is predominantly caused by SH-waves propagating vertically from the
 underlying bedrock.</p>
 </div>
 <div class="section" id="transfer-function">
 <h2>Transfer function<a class="headerlink" href="#transfer-function" title="Permalink to this headline">¶</a></h2>
-<p>An important method for ground response analysis is based on the use of transfer function, that determines how each frequency in the bedrock (input) motion is
-amplified, or deamplified, by soil deposit. Thus, the transfer function may be viewed as a filter that acts upon some input signal to produce an output signal.
+<p>An important method for ground response analysis is based on the use of transfer functions, which determine how each frequency in the bedrock (input) motion is
+amplified, or deamplified, by the soil deposit. A transfer function may be viewed as a filter that acts upon some input signal to produce an output signal.
 For one dimensional site response analysis, the transfer function can be used to calcualte various response parameters, such as acceleration, velocity,
-displacement, shear stress, and shear strain, under an input motion parameter such as bedrock acceleration. Because this method relies on the principle of
-superposition, this analysis is limited to the analysis of linear system.</p>
+displacement, shear stress, and shear strain, under an input motion parameter such as a bedrock acceleration. Because this method relies on the principle of
+superposition, this analysis is limited to the analysis of linear systems.</p>
 <p>The basic steps are as following:</p>
 <ol class="arabic simple">
-<li><p>Obtain Fourier series for the applied motion using Fast Fourier Transform (FFT).</p></li>
-<li><p>Multiply the Fourier series by the appropriate value of the transfer function at each frequency.</p></li>
-<li><p>Express the output motion in time domain by obtaining inverse Fourier transform of the output motion using inverse FFT.</p></li>
+<li><p>Obtain the Fourier series for the applied motion using the Fast Fourier Transform (FFT).</p></li>
+<li><p>Multiply the Fourier series by the appropriate value of the transfer function at each frequency to obtain the output Fourier series.</p></li>
+<li><p>Express the output Fourier series in the time domain using the inverse FFT.</p></li>
 </ol>
-<p>The greatest amplification will occur approximately at the lowest natural frequency, also know as the <strong>fundamental frequency</strong>:</p>
+<p>The greatest amplification will occur approximately at the lowest natural frequency, also know as the <strong>fundamental frequency</strong>.
+For a uniform soil profile the fundamental frequency is</p>
 <div class="math notranslate nohighlight">
 \[\omega_0 = \frac{\pi v_s}{2H}\]</div>
+<p>where <span class="math notranslate nohighlight">\(v_s\)</span> and <span class="math notranslate nohighlight">\(H\)</span> are the shear wave velocity and thickness of the soil profile.</p>
 <p>The period of vibration corresponding to the fundamental frequency is called the <strong>characteristic site period</strong>:</p>
 <div class="math notranslate nohighlight">
 \[T_s = \frac{2\pi}{\omega_0} = \frac{4H}{v_s}\]</div>
 </div>
 <div class="section" id="evaluation-of-transfer-function">
 <h2>Evaluation of Transfer function<a class="headerlink" href="#evaluation-of-transfer-function" title="Permalink to this headline">¶</a></h2>
-<p><a class="bibtex reference internal" href="#kramer1996" id="id2">[Kra96]</a> presents details about evaluation of transfer functions for four different cases by varing the assumptions for soil and
-bedrock, respectively. These cases can be replicated using this tool:</p>
+<p>Within the profile, both upward and downward travelling waves exist due to reflection at each layer boundary (refraction
+is ignored in 1D assumption). When the bedrock is rigid, any downward travelling waves in the soil are completely reflected back toward the
+ground surface. Thus all elastic wave energy is trapped in the system. An elastic bedrock, on the other hand, only reflects part of the
+downward travelling waves that reach the soil-rock interface; part of the elastic wave energy is transmitted through the interface and lost from
+the system. This is a form of radiation damping and it causes the free surface motion amplitudes to be smaller than those for the case of
+rigid bedrock. The fraction of reflected waves depends on the <em>complex impedance ratio</em>, <span class="math notranslate nohighlight">\(\alpha_z\)</span>, that is defined as,</p>
+<div class="math notranslate nohighlight">
+\[\frac{G^*_mk^*_m}{G^*_{m+1}k^*_{m+1}} = \frac{\rho_m(v_s^*)_m}{\rho_{m+1}(v_s^*)_{m+1}} \,,\]</div>
+<p>where <span class="math notranslate nohighlight">\(G^*,\,k^*,\,v_s^*\)</span> are the complex shear modulus, complex wave number, and complex shear wave velocity, respectively.</p>
+<div class="align-center figure" id="id3">
+<a class="reference internal image-reference" href="_images/schematic.png"><img alt="_images/schematic.png" src="_images/schematic.png" style="width: 382.6px; height: 288.2px;" /></a>
+<p class="caption"><span class="caption-text">Schematic for a layered soil deposit on rock</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="bibtex reference internal" href="#kramer1996" id="id2">[Kra96]</a> presents details about the evaluation of transfer functions for four different cases by varing the assumptions for soil and
+bedrock, respectively. These cases are replicated in the figures below using this tool:</p>
 <div class="section" id="unifom-undamped-soil-on-rigid-rock">
 <h3>Unifom, undamped soil on rigid rock<a class="headerlink" href="#unifom-undamped-soil-on-rigid-rock" title="Permalink to this headline">¶</a></h3>
-<div class="align-center figure" id="id3">
+<div class="align-center figure" id="id4">
 <a class="reference internal image-reference" href="_images/case1.png"><img alt="_images/case1.png" src="_images/case1.png" style="width: 315.20000000000005px; height: 238.20000000000002px;" /></a>
-<p class="caption"><span class="caption-text">Transfer function for an uniform, undamped soil on rigid rock</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Transfer function for an uniform, undamped soil on rigid rock</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="uniform-damped-soil-on-rigid-rock">
 <h3>Uniform, damped soil on rigid rock<a class="headerlink" href="#uniform-damped-soil-on-rigid-rock" title="Permalink to this headline">¶</a></h3>
-<div class="align-center figure" id="id4">
+<div class="align-center figure" id="id5">
 <a class="reference internal image-reference" href="_images/case2.png"><img alt="_images/case2.png" src="_images/case2.png" style="width: 315.20000000000005px; height: 238.20000000000002px;" /></a>
-<p class="caption"><span class="caption-text">Transfer function for an uniform, damped soil on rigid rock</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Transfer function for an uniform, damped soil on rigid rock</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="unifom-damped-soil-on-elastic-rock">
 <h3>Unifom, damped soil on elastic rock<a class="headerlink" href="#unifom-damped-soil-on-elastic-rock" title="Permalink to this headline">¶</a></h3>
-<div class="align-center figure" id="id5">
+<div class="align-center figure" id="id6">
 <a class="reference internal image-reference" href="_images/case3.png"><img alt="_images/case3.png" src="_images/case3.png" style="width: 315.20000000000005px; height: 238.20000000000002px;" /></a>
-<p class="caption"><span class="caption-text">Transfer function for an uniform, damped soil on elastic rock with impedance ratio = 0.5</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Transfer function for an uniform, damped soil on elastic rock with impedance ratio = 0.5</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="layered-damped-soil-on-elastic-rock">
 <h3>Layered, damped soil on elastic rock<a class="headerlink" href="#layered-damped-soil-on-elastic-rock" title="Permalink to this headline">¶</a></h3>
-<div class="align-center figure" id="id6">
-<a class="reference internal image-reference" href="_images/case4.png"><img alt="_images/case4.png" src="_images/case4.png" style="width: 315.20000000000005px; height: 238.20000000000002px;" /></a>
-<p class="caption"><span class="caption-text">Transfer function for layered, damped soil on elastic rock</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
-</div>
 <div class="align-center figure" id="id7">
-<a class="reference internal image-reference" href="_images/schematic.png"><img alt="_images/schematic.png" src="_images/schematic.png" style="width: 332.0px; height: 286.8px;" /></a>
-<p class="caption"><span class="caption-text">Schematic for a layered soil deposit on elastic rock</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="_images/case4.png"><img alt="_images/case4.png" src="_images/case4.png" style="width: 315.20000000000005px; height: 238.20000000000002px;" /></a>
+<p class="caption"><span class="caption-text">Transfer function for layered, damped soil on elastic rock</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
 <div class="section" id="rigid-bedrock-vs-elastic-bedrock">
 <h2>Rigid bedrock vs. elastic bedrock<a class="headerlink" href="#rigid-bedrock-vs-elastic-bedrock" title="Permalink to this headline">¶</a></h2>
-<p>Bedrock can be modeled as rigid or elastic half space and it depends on the input motion. Rigid bedrock is used to apply within motion, that is recorded
-in an downhole. While elastic bedrock is used to apply rock outcrop motion, that is recorded at rock outcrop. In this tool, rigid bedrock is mimicked by
-increasing stiffness (shear wave velocity and/or density) of the bedrock.</p>
+<p>If the <strong>within</strong> motion is known, a rigid bedrock condition should be used for estimating the surface motion. In this tool, a rigid based condition can be approximately represented by increasing the stiffness (shear wave velocity and/or density) of the bedrock. When including the elastic bedrock a <strong>bedrock</strong> motion should be used instead. A bedrock motion can be obtained from the decombolution of an <strong>outcrop</strong> (surface) motion.</p>
 <p id="bibtex-bibliography-theory-0"><dl class="citation">
 <dt class="bibtex label" id="kramer1996"><span class="brackets">Kra96</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
 <dd><p>S. L. Kramer. <em>Geotechnical Earthquake Engineering</em>. Pearson, 1996. ISBN 9783642196294.</p>

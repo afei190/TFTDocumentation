@@ -39,7 +39,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Theory and Examples" href="theory.html" />
-    <link rel="prev" title="Welcome to TransferFunctionTool’s documentation!" href="index.html" /> 
+    <link rel="prev" title="Welcome to the Transfer Function Tool (TFT) documentation!" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -56,9 +56,6 @@
             <a href="index.html" class="icon icon-home" alt="Documentation Home"> TransferFunctionTool
           
 
-          
-            
-            <img src="_static/SimCenter_TFT_logo.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -90,7 +87,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Quick start</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#download-appname">Download <em>Tranfer Function Tool</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#download-the-appname">Download the <em>Tranfer Function Tool</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#user-interface">User Interface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#add-remove-soil-layers">Add/remove soil layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#modify-properties-of-a-layer">Modify properties of a layer</a></li>
@@ -168,18 +165,15 @@
             
   <div class="section" id="quick-start">
 <span id="quickstart"></span><h1>Quick start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="download-appname">
-<h2>Download <em>Tranfer Function Tool</em><a class="headerlink" href="#download-appname" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="download-the-appname">
+<h2>Download the <em>Tranfer Function Tool</em><a class="headerlink" href="#download-the-appname" title="Permalink to this headline">¶</a></h2>
 <p>The app can be downloaded from <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/">here</a>.</p>
-<p>Installation is generally not required. However, if Microsoft Visual C++ Runtime Library error is encountered, this issuer can be solved by
+<p>Installation is generally not required. However, if a Microsoft Visual C++ Runtime Library error is encountered, the issue can be resolved by
 installing the latest version of Microsoft Visual C++. A installer, <em>vc_redist.x64.exe</em>, is included in the zip file.</p>
 </div>
 <div class="section" id="user-interface">
 <h2>User Interface<a class="headerlink" href="#user-interface" title="Permalink to this headline">¶</a></h2>
-<p>As shown in the figures below, the tool’s main window consists of three major groups: left control group, Layer Plot, and a tab view that can be switched for defining
-layers or showing motion plots. In the “Layer Properties” group, the lineedits and sliders can be used to change properties (thickness, density, etc.) of current active layer as
-indicated in the “Changing layer” as well as highlighted in the layer plot and table view. Thickness and damping ratio of bedrock layer is not changeable since the soil layers are
-assumed to be on top of an infinite half space.</p>
+<p>As shown in the figures below, the tool’s main window consists of three major groups: a) left control group, with commands for changing “Layer Properties” and “Motion Selection”, b) “Layer plot” with  selectable layers, and c) tab bar that can be switched to “Define Layer” or show “Motion Plots”. In the “Layer Properties” group, the lineedits and sliders can be used to change properties (shear wave velocity, density, thickness and damping ratio) of the current active layer as indicated in the “Changing Layer” as well as highlighted in the “Layer Plot” and “Layer Table” view. The three groups are interconnected and changes in one are automatically reflected in the others. The thickness and damping ratio of the bedrock layer is not changeable since the soil layers are assumed to be on top of an infinite half space.</p>
 <div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="_images/Tab1.png"><img alt="_images/Tab1.png" src="_images/Tab1.png" style="width: 472.79999999999995px; height: 357.3px;" /></a>
 <p class="caption"><span class="caption-text">User interface with “Defining Layers” tab shown</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
@@ -191,22 +185,22 @@ assumed to be on top of an infinite half space.</p>
 </div>
 <div class="section" id="add-remove-soil-layers">
 <h2>Add/remove soil layers<a class="headerlink" href="#add-remove-soil-layers" title="Permalink to this headline">¶</a></h2>
-<p>Under Layer tab, click the ‘Add Layer’/ ‘Remove Layer’ button on the top of the table to add/remove a soil layer.</p>
+<p>Under the Layer tab, click the “Add Layer”/”Remove Layer” button on the top of the table to add/remove a soil layer.</p>
 </div>
 <div class="section" id="modify-properties-of-a-layer">
 <h2>Modify properties of a layer<a class="headerlink" href="#modify-properties-of-a-layer" title="Permalink to this headline">¶</a></h2>
-<p>Density, thickness, shear wave velocity, and damping ratio can be modified for each layer. Click on the layer plot or any row in the layer table to select a soil layer.
-Subsequently, lineedits and sliders are associated to the selected layer.</p>
+<p>Density, thickness, shear wave velocity, and damping ratio can be modified for each layer. Click on the layer plot or any row in the layer table to select a soil layer. Subsequently, lineedits and sliders will be associated to the selected layer. SI units are used for all values.</p>
 </div>
 <div class="section" id="select-a-different-input-motion">
 <h2>Select a different input motion<a class="headerlink" href="#select-a-different-input-motion" title="Permalink to this headline">¶</a></h2>
-<p>Several input motions are pre-included in this tool including earthquake recordings, harmonic vibration, as well as frequency sweep time series. The frequency lineedit and
+<p>Several input motions are pre-defined in this tool including earthquake recordings, harmonic vibrations, as well as a frequency sweep time series. The frequency lineedit and
 slider can be used to vary the frequency of the harmonic vibration, thus will only be enabled when this motion is selected.</p>
+<p>Additional motions can also be imported and viewed in this tool by checking the “Load User Motion” option. The current version only supports the JSON format. Examples of input motion JSON files can be found <a class="reference external" href="https://github.com/NHERI-SimCenter/TransferFunctionTool/tree/master/resources/motions">in the repository</a>.</p>
 </div>
 <div class="section" id="lock-axes">
 <h2>Lock axes<a class="headerlink" href="#lock-axes" title="Permalink to this headline">¶</a></h2>
 <p>By default, the axis limits of each figure are replotted after any changes in properties or motion. However, these limits can be locked by checking the “Lock Axes” checkbox. Then the
-effect of each property on transfer function can be visualized and compared. To reset axes, simply click the “Reset Figures” button.</p>
+effect of each property on the transfer function can be visualized and compared. To reset axes, simply click the “Reset Figures” button.</p>
 </div>
 </div>
 
@@ -221,7 +215,7 @@ effect of each property on transfer function can be visualized and compared. To 
         <a href="theory.html" class="btn btn-neutral float-right" title="Theory and Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to TransferFunctionTool’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to the Transfer Function Tool (TFT) documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -57,9 +57,6 @@
           
 
           
-            
-            <img src="_static/SimCenter_TFT_logo.png" class="logo" alt="Logo"/>
-          
           </a>
 
           
@@ -160,24 +157,24 @@
             
   <div class="section" id="how-to-build">
 <span id="lbl-how-to-build"></span><h1>How to Build<a class="headerlink" href="#how-to-build" title="Permalink to this headline">¶</a></h1>
-<p>To build the tool, follow the below instructions:</p>
+<p>To build the tool follow the instructions below:</p>
 <ol class="arabic simple">
 <li><p>Install <a class="reference external" href="https://www.qt.io/">Qt</a>. Qt is free for open source developers.</p></li>
-<li><p>Download and install the qwt library following instructions <a class="reference external" href="https://qwt.sourceforge.io/qwtinstall.html">here</a>.</p></li>
-<li><p>Download and install the MKL library following instructions <a class="reference external" href="https://software.intel.com/content/www/us/en/develop/tools/math-kernel-library.html">here</a>.</p></li>
+<li><p>Download and install the qwt library following the instructions <a class="reference external" href="https://qwt.sourceforge.io/qwtinstall.html">here</a>.</p></li>
+<li><p>Download and install the MKL library following the instructions <a class="reference external" href="https://software.intel.com/content/www/us/en/develop/tools/math-kernel-library.html">here</a>.</p></li>
 <li><p>Download this repository from <a class="reference external" href="https://github.com/NHERI-SimCenter/TransferFunctionTool">Github</a>.</p></li>
-<li><p>Download SimCenterCommon repository from <a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterCommon">Github</a>.</p></li>
-<li><p>Open the file TransferFunctionTool.pro using Qt Creator, change path to the qwt and MKL libraies.</p></li>
-<li><p>Build <em>Tranfer Function Tool</em> by clicking the Run button.</p></li>
+<li><p>Download the SimCenterCommon repository from <a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterCommon">Github</a>.</p></li>
+<li><p>Open the file TransferFunctionTool.pro using Qt Creator, and change the path to the appropriate qwt and MKL folders as installed in your system.</p></li>
+<li><p>Build the <em>Tranfer Function Tool</em> by clicking the Run button.</p></li>
 </ol>
-<p>Alternative Build Method Using Conan:</p>
+<p>Alternative build method using Conan:</p>
 <ol class="arabic">
 <li><p>Install <a class="reference external" href="https://www.qt.io/">Qt</a>. Qt is free for open source developers.</p></li>
-<li><p>Download and install the qwt library following instructions <a class="reference external" href="https://qwt.sourceforge.io/qwtinstall.html">here</a>.</p></li>
-<li><p>Install MKL library using the C/C++ package manager Conan</p>
+<li><p>Download and install the qwt library following the instructions <a class="reference external" href="https://qwt.sourceforge.io/qwtinstall.html">here</a>.</p></li>
+<li><p>Install the MKL library using the C/C++ package manager Conan</p>
 <ul>
-<li><p>Install conan with <a class="reference external" href="https://docs.conan.io/en/latest/installation.html">pip</a> (require python)</p></li>
-<li><p>Add necessary remotes to conan enviroment using:</p>
+<li><p>Install conan with <a class="reference external" href="https://docs.conan.io/en/latest/installation.html">pip</a> (requires python)</p></li>
+<li><p>Add the necessary remotes to the conan enviroment using:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conan</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">simcenter</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="o">.</span><span class="n">bintray</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">conan</span><span class="o">/</span><span class="n">nheri</span><span class="o">-</span><span class="n">simcenter</span><span class="o">/</span><span class="n">simcenter</span>
 <span class="n">conan</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">conan</span><span class="o">-</span><span class="n">community</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="o">.</span><span class="n">bintray</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">conan</span><span class="o">/</span><span class="n">conan</span><span class="o">-</span><span class="n">community</span><span class="o">/</span><span class="n">conan</span>
@@ -189,9 +186,9 @@
 </ul>
 </li>
 <li><p>Download this repository from <a class="reference external" href="https://github.com/NHERI-SimCenter/TransferFunctionTool">Github</a>.</p></li>
-<li><p>Open the file TransferFunctionTool.pro using Qt Creator, change path to the qwt library.</p></li>
+<li><p>Open the file TransferFunctionTool.pro using Qt Creator, and change the path to the appropriate qwt folder as installed in your system.</p></li>
 <li><p>Run qmake.</p></li>
-<li><p>Build <em>Tranfer Function Tool</em> by clicking the Run button.</p></li>
+<li><p>Build the <em>Tranfer Function Tool</em> by clicking the Run button.</p></li>
 </ol>
 </div>
 
